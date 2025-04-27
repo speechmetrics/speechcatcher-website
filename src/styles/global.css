@@ -52,7 +52,7 @@
   --card-foreground: #102a43; /* blue-grey-900 */
   --popover: #ffffff;
   --popover-foreground: #102a43; /* blue-grey-900 */
-  --primary: #2680c2; /* blue-500 */
+  --primary: #4098d7; /* blue-400 */
   --primary-foreground: #ffffff;
   --secondary: #d9e2ec; /* blue-grey-100 */
   --secondary-foreground: #334e68; /* blue-grey-700 */
@@ -64,14 +64,14 @@
   --border: #bcccdc; /* blue-grey-200 */
   --input: #d9e2ec; /* blue-grey-100 */
   --ring: #4098d7; /* blue-400 */
-  --chart-1: #2680c2; /* blue-500 */
+  --chart-1: #4098d7; /* blue-400 */
   --chart-2: #2cb1bc; /* cyan-500 */
   --chart-3: #f0b429; /* yellow-vivid-500 */
   --chart-4: #627d98; /* blue-grey-500 */
   --chart-5: #d64545; /* red-400 */
   --sidebar: #f0f4f8; /* blue-grey-50 */
   --sidebar-foreground: #102a43; /* blue-grey-900 */
-  --sidebar-primary: #2680c2; /* blue-500 */
+  --sidebar-primary: #4098d7; /* blue-400 */
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #d9e2ec; /* blue-grey-100 */
   --sidebar-accent-foreground: #334e68; /* blue-grey-700 */

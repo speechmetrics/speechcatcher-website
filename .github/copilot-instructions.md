@@ -15,6 +15,8 @@ This is a redesign of [the SpeechCatcher website](https://www.speechcatcher.ca/)
 - This project uses tailwind for styling
 - AstroJS, React, shadcn/ui and Tailwind are all already installed and configured
 - Use the Context7 MCP server to get documentation when needed
+- Use <https://placehold.co> for placeholder images
+  - EX: `https://placehold.co/600x400?text=Hello+World`
 
 ## Palette
 

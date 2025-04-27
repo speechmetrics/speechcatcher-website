@@ -1,0 +1,39 @@
+---
+// UserSegments.astro
+import { userSegments } from "../../data/users";
+import UserCard from "./UserCard.astro";
+---
+
+<!-- User Segments Section -->
+<section id="users" class="py-20 bg-muted/50 flex justify-center">
+  <div class="container px-4 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div
+          class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
+        >
+          Who It's For
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          SpeechCatcher is for everyone
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          For clinicians, researchers, teachers and students alike.
+        </p>
+      </div>
+    </div>
+    <div
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        userSegments.map((segment) => (
+          <UserCard title={segment.title} description={segment.description} />
+        ))
+      }
+    </div>
+  </div>
+</section>

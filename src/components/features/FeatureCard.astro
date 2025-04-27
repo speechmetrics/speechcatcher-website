@@ -1,0 +1,24 @@
+---
+// FeatureCard.astro
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+---
+
+<div
+  class="group relative overflow-hidden rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md"
+>
+  <div
+    class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary"
+  >
+    <Fragment set:html={icon} />
+  </div>
+  <h3 class="mt-4 font-semibold">{title}</h3>
+  <p class="mt-2 text-sm text-muted-foreground">
+    {description}
+  </p>
+</div>

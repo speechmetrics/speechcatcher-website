@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -8,6 +9,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Poppins", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,71 +45,72 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F0F4F8; /* blue-grey-50 */
-  --foreground: #102A43; /* blue-grey-900 */
-  --card: #FFFFFF;
-  --card-foreground: #102A43; /* blue-grey-900 */
-  --popover: #FFFFFF;
-  --popover-foreground: #102A43; /* blue-grey-900 */
-  --primary: #2680C2; /* blue-500 */
-  --primary-foreground: #FFFFFF;
-  --secondary: #D9E2EC; /* blue-grey-100 */
-  --secondary-foreground: #334E68; /* blue-grey-700 */
-  --muted: #BCCCDC; /* blue-grey-200 */
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --background: #f0f4f8; /* blue-grey-50 */
+  --foreground: #102a43; /* blue-grey-900 */
+  --card: #ffffff;
+  --card-foreground: #102a43; /* blue-grey-900 */
+  --popover: #ffffff;
+  --popover-foreground: #102a43; /* blue-grey-900 */
+  --primary: #2680c2; /* blue-500 */
+  --primary-foreground: #ffffff;
+  --secondary: #d9e2ec; /* blue-grey-100 */
+  --secondary-foreground: #334e68; /* blue-grey-700 */
+  --muted: #bcccdc; /* blue-grey-200 */
   --muted-foreground: #486581; /* blue-grey-600 */
-  --accent: #E0FCFF; /* cyan-50 */
-  --accent-foreground: #0A6C74; /* cyan-800 */
-  --destructive: #BA2525; /* red-500 */
-  --border: #BCCCDC; /* blue-grey-200 */
-  --input: #D9E2EC; /* blue-grey-100 */
-  --ring: #4098D7; /* blue-400 */
-  --chart-1: #2680C2; /* blue-500 */
-  --chart-2: #2CB1BC; /* cyan-500 */
-  --chart-3: #F0B429; /* yellow-vivid-500 */
-  --chart-4: #627D98; /* blue-grey-500 */
-  --chart-5: #D64545; /* red-400 */
-  --sidebar: #F0F4F8; /* blue-grey-50 */
-  --sidebar-foreground: #102A43; /* blue-grey-900 */
-  --sidebar-primary: #2680C2; /* blue-500 */
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #D9E2EC; /* blue-grey-100 */
-  --sidebar-accent-foreground: #334E68; /* blue-grey-700 */
-  --sidebar-border: #BCCCDC; /* blue-grey-200 */
-  --sidebar-ring: #4098D7; /* blue-400 */
+  --accent: #e0fcff; /* cyan-50 */
+  --accent-foreground: #0a6c74; /* cyan-800 */
+  --destructive: #ba2525; /* red-500 */
+  --border: #bcccdc; /* blue-grey-200 */
+  --input: #d9e2ec; /* blue-grey-100 */
+  --ring: #4098d7; /* blue-400 */
+  --chart-1: #2680c2; /* blue-500 */
+  --chart-2: #2cb1bc; /* cyan-500 */
+  --chart-3: #f0b429; /* yellow-vivid-500 */
+  --chart-4: #627d98; /* blue-grey-500 */
+  --chart-5: #d64545; /* red-400 */
+  --sidebar: #f0f4f8; /* blue-grey-50 */
+  --sidebar-foreground: #102a43; /* blue-grey-900 */
+  --sidebar-primary: #2680c2; /* blue-500 */
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d9e2ec; /* blue-grey-100 */
+  --sidebar-accent-foreground: #334e68; /* blue-grey-700 */
+  --sidebar-border: #bcccdc; /* blue-grey-200 */
+  --sidebar-ring: #4098d7; /* blue-400 */
 }
 
 .dark {
-  --background: #102A43; /* blue-grey-900 */
-  --foreground: #F0F4F8; /* blue-grey-50 */
-  --card: #243B53; /* blue-grey-800 */
-  --card-foreground: #F0F4F8; /* blue-grey-50 */
-  --popover: #243B53; /* blue-grey-800 */
-  --popover-foreground: #F0F4F8; /* blue-grey-50 */
-  --primary: #62B0E8; /* blue-300 */
-  --primary-foreground: #0A558C; /* blue-800 */
-  --secondary: #334E68; /* blue-grey-700 */
-  --secondary-foreground: #F0F4F8; /* blue-grey-50 */
+  --background: #102a43; /* blue-grey-900 */
+  --foreground: #f0f4f8; /* blue-grey-50 */
+  --card: #243b53; /* blue-grey-800 */
+  --card-foreground: #f0f4f8; /* blue-grey-50 */
+  --popover: #243b53; /* blue-grey-800 */
+  --popover-foreground: #f0f4f8; /* blue-grey-50 */
+  --primary: #62b0e8; /* blue-300 */
+  --primary-foreground: #0a558c; /* blue-800 */
+  --secondary: #334e68; /* blue-grey-700 */
+  --secondary-foreground: #f0f4f8; /* blue-grey-50 */
   --muted: #486581; /* blue-grey-600 */
-  --muted-foreground: #9FB3C8; /* blue-grey-300 */
-  --accent: #0E7C86; /* cyan-700 */
-  --accent-foreground: #E0FCFF; /* cyan-50 */
-  --destructive: #D64545; /* red-400 */
+  --muted-foreground: #9fb3c8; /* blue-grey-300 */
+  --accent: #0e7c86; /* cyan-700 */
+  --accent-foreground: #e0fcff; /* cyan-50 */
+  --destructive: #d64545; /* red-400 */
   --border: rgba(240, 244, 248, 0.1); /* blue-grey-50 with opacity */
   --input: rgba(240, 244, 248, 0.15); /* blue-grey-50 with opacity */
-  --ring: #627D98; /* blue-grey-500 */
-  --chart-1: #62B0E8; /* blue-300 */
-  --chart-2: #38BEC9; /* cyan-400 */
-  --chart-3: #F7C948; /* yellow-vivid-400 */
-  --chart-4: #9FB3C8; /* blue-grey-300 */
-  --chart-5: #E66A6A; /* red-300 */
-  --sidebar: #243B53; /* blue-grey-800 */
-  --sidebar-foreground: #F0F4F8; /* blue-grey-50 */
-  --sidebar-primary: #62B0E8; /* blue-300 */
-  --sidebar-primary-foreground: #F0F4F8; /* blue-grey-50 */
-  --sidebar-accent: #334E68; /* blue-grey-700 */
-  --sidebar-accent-foreground: #F0F4F8; /* blue-grey-50 */
+  --ring: #627d98; /* blue-grey-500 */
+  --chart-1: #62b0e8; /* blue-300 */
+  --chart-2: #38bec9; /* cyan-400 */
+  --chart-3: #f7c948; /* yellow-vivid-400 */
+  --chart-4: #9fb3c8; /* blue-grey-300 */
+  --chart-5: #e66a6a; /* red-300 */
+  --sidebar: #243b53; /* blue-grey-800 */
+  --sidebar-foreground: #f0f4f8; /* blue-grey-50 */
+  --sidebar-primary: #62b0e8; /* blue-300 */
+  --sidebar-primary-foreground: #f0f4f8; /* blue-grey-50 */
+  --sidebar-accent: #334e68; /* blue-grey-700 */
+  --sidebar-accent-foreground: #f0f4f8; /* blue-grey-50 */
   --sidebar-border: rgba(240, 244, 248, 0.1); /* blue-grey-50 with opacity */
-  --sidebar-ring: #627D98; /* blue-grey-500 */
+  --sidebar-ring: #627d98; /* blue-grey-500 */
 }
 
 @layer base {
@@ -115,6 +118,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    font-family: var(--font-sans);
   }
 }

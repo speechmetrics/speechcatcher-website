@@ -1,69 +1,53 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
       colors: {
-        blue: {
-          50: "#DCEEFB",
-          100: "#B6E0FE",
-          200: "#84C5F4",
-          300: "#62B0E8",
-          400: "#4098D7",
-          500: "#2680C2",
-          600: "#186FAF",
-          700: "#0F609B",
-          800: "#0A558C",
-          900: "#003E6B",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
-        "yellow-vivid": {
-          50: "#FFFBEA",
-          100: "#FFF3C4",
-          200: "#FCE588",
-          300: "#FADB5F",
-          400: "#F7C948",
-          500: "#F0B429",
-          600: "#DE911D",
-          700: "#CB6E17",
-          800: "#B44D12",
-          900: "#8D2B0B",
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
-        "blue-grey": {
-          50: "#F0F4F8",
-          100: "#D9E2EC",
-          200: "#BCCCDC",
-          300: "#9FB3C8",
-          400: "#829AB1",
-          500: "#627D98",
-          600: "#486581",
-          700: "#334E68",
-          800: "#243B53",
-          900: "#102A43",
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
-        cyan: {
-          50: "#E0FCFF",
-          100: "#BEF8FD",
-          200: "#87EAF2",
-          300: "#54D1DB",
-          400: "#38BEC9",
-          500: "#2CB1BC",
-          600: "#14919B",
-          700: "#0E7C86",
-          800: "#0A6C74",
-          900: "#044E54",
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
         },
-        red: {
-          50: "#FFEEEE",
-          100: "#FACDCD",
-          200: "#F29B9B",
-          300: "#E66A6A",
-          400: "#D64545",
-          500: "#BA2525",
-          600: "#A61B1B",
-          700: "#911111",
-          800: "#780A0A",
-          900: "#610404",
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
         },
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
+        },
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },

@@ -3,41 +3,50 @@
 ---
 
 <header
-  class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="sticky top-0 z-50 w-full flex justify-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
-  <div class="container flex h-16 items-center justify-between">
-    <div class="flex items-center gap-6 text-lg font-semibold">
+  <div class="container flex h-16 items-center">
+    <!-- Logo on the left -->
+    <div class="flex-shrink-0 mr-4">
       <a href="/" class="flex items-center gap-2">
-        <span class="text-primary">SpeechCatcher</span>
+        <span class="text-primary font-semibold">SpeechCatcher</span>
       </a>
     </div>
-    <nav class="flex items-center gap-6">
-      <a
-        href="#features"
-        class="text-sm font-medium hover:text-primary transition-colors"
-        >Features</a
-      >
-      <a
-        href="#users"
-        class="text-sm font-medium hover:text-primary transition-colors"
-        >Who It's For</a
-      >
-      <a
-        href="#how-it-works"
-        class="text-sm font-medium hover:text-primary transition-colors"
-        >How It Works</a
-      >
-      <a
-        href="#contact"
-        class="text-sm font-medium hover:text-primary transition-colors"
-        >Contact</a
-      >
+
+    <!-- Navigation links centered -->
+    <nav class="flex-1 flex justify-center items-center">
+      <div class="flex items-center gap-6">
+        <a
+          href="#features"
+          class="text-sm font-medium hover:text-primary transition-colors"
+          >Features</a
+        >
+        <a
+          href="#users"
+          class="text-sm font-medium hover:text-primary transition-colors"
+          >Who It's For</a
+        >
+        <a
+          href="#how-it-works"
+          class="text-sm font-medium hover:text-primary transition-colors"
+          >How It Works</a
+        >
+        <a
+          href="#contact"
+          class="text-sm font-medium hover:text-primary transition-colors"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Get Started button on the right -->
+    <div class="flex-shrink-0 ml-4">
       <a
         href="#"
         class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
       >
         Get Started
       </a>
-    </nav>
+    </div>
   </div>
 </header>

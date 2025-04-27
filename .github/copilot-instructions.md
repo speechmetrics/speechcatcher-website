@@ -1,4 +1,12 @@
-# Instructions
+# SpeechCatcher Website
+
+## What is SpeechCatcher?
+
+SpeechCatcher is a comprehensive digital platform designed to revolutionize speech testing across clinical and academic environments. It offers a complete solution for creating, administering, and analyzing speech assessments in any language through features like interactive speech recording, assisted phonetic transcription, and fully automated analysis. The platform eliminates manual scoring, significantly reducing the time professionals spend on administrative tasks while improving assessment quality. Designed for speech clinicians, researchers, teachers, and students alike, SpeechCatcher supports all languages and multilingual settings with full International Phonetic Alphabet compatibility, making it versatile for various speech testing needs while maintaining industry-standard data privacy and security protocols for medical applications.
+
+The main product is the SpeechCatcher iPad app
+
+## Instructions
 
 This is a redesign of [the SpeechCatcher website](https://www.speechcatcher.ca/)
 

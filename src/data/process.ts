@@ -8,32 +8,32 @@ export interface ProcessStep {
 export const processSteps: ProcessStep[] = [
   {
     number: 1,
-    title: "Interactive speech recording",
+    title: "Record with Ease",
     features: [
       "Automatic time alignment",
-      "One or many targets per image",
-      "Optional text prompts",
-      "Subtle time-saving actions",
+      "Customizable prompts",
+      "Flexible target management",
+      "Efficient data capture",
     ],
   },
   {
     number: 2,
-    title: "Assisted phonetic transcription",
+    title: "Transcribe Effortlessly",
     features: [
-      "Waveform visualization",
-      "Minimal transcription work",
-      "Sound specific suggestions",
-      "Keyboard for phonetic characters",
+      "Assisted phonetic transcription",
+      "Intuitive waveform visualization",
+      "Simplified workflow",
+      "Phonetic character support",
     ],
   },
   {
     number: 3,
-    title: "Automatic analysis and reporting",
+    title: "Analyze Automatically",
     features: [
-      "Fully automated analyses",
+      "Instant comprehensive analyses",
       "Customizable reports",
-      "Direct access to data records",
-      "Convenient report annotation tool",
+      "Easy data management",
+      "Annotation and sharing tools",
     ],
   },
 ];

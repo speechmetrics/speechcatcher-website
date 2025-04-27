@@ -7,9 +7,9 @@ export interface Feature {
 
 export const features: Feature[] = [
   {
-    title: "Compatible with all languages",
+    title: "Universal language compatibility",
     description:
-      "Support for language variation, code-switching and all characters of the International phonetic alphabet.",
+      "Supports multilingual assessments, language variation, code-switching, and the entire International Phonetic Alphabet.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -41,9 +41,9 @@ export const features: Feature[] = [
     </svg>`,
   },
   {
-    title: "Interactive data recording",
+    title: "Interactive speech recording",
     description:
-      "Automatic time alignment, multiple targets per image, and subtle time-saving actions.",
+      "Automatic time alignment, flexible target management, and intuitive time-saving features.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -64,9 +64,9 @@ export const features: Feature[] = [
     </svg>`,
   },
   {
-    title: "Fully automatic analyses",
+    title: "Fully automated analysis",
     description:
-      "Automated analyses, customizable reports, and direct access to data records.",
+      "Instantly analyze speech data, generate customizable reports, and easily manage your data records.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -87,9 +87,9 @@ export const features: Feature[] = [
     </svg>`,
   },
   {
-    title: "Ideal for evidence-based practice",
+    title: "Evidence-based practice made easy",
     description:
-      "Engaging platform that supports evidence-based practices in speech assessment and therapy.",
+      "Empower evidence-driven assessment with a user-friendly, engaging digital platform.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -109,9 +109,9 @@ export const features: Feature[] = [
     </svg>`,
   },
   {
-    title: "Assisted phonetic transcription",
+    title: "Effortless phonetic transcription",
     description:
-      "Waveform visualization, minimal transcription work, and keyboard for phonetic characters.",
+      "Visualize waveforms, simplify transcription, and access a phonetic character keyboard tailored to your workflow.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -130,9 +130,9 @@ export const features: Feature[] = [
     </svg>`,
   },
   {
-    title: "Create new tests",
+    title: "Flexible test creation",
     description:
-      "Create, digitize or update existing tests. Take advantage of a fully digital environment.",
+      "Digitize existing tests or create new ones effortlessly within a fully digital environment.",
     icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"

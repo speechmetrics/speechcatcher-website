@@ -6,33 +6,33 @@ export interface UserSegment {
 
 export const userSegments: UserSegment[] = [
   {
-    title: "Speech clinicians",
+    title: "Speech Clinicians",
     description:
-      "Enjoy speech testing in a fully secure, digital environment. No more manual scoring! Deliver better quality speech assessments and enjoy significant time savings!",
+      "Deliver higher-quality assessments in less time. Automate scoring and securely manage speech testing digitally.",
   },
   {
     title: "Researchers",
     description:
-      "Access innovative methods to sample and analyze speech data. Benefit from powerful solutions for data analysis. Export your test data for analysis in 3rd party software.",
+      "Leverage advanced tools for speech data collection and automated analysis. Easily export data for external analysis.",
   },
   {
-    title: "Teachers",
+    title: "Educators",
     description:
-      "Teach all workflows involved in speech assessment, from client data management to reporting. Explore different methods and analyses in one convenient package.",
+      "Efficiently teach complete speech assessment workflows from recording to reporting—all within one integrated platform.",
   },
   {
     title: "Students",
     description:
-      "Sharpen your testing and transcription skills for every step involved in speech testing. Let your device take care of data analysis, and enjoy more time learning from your results.",
+      "Develop essential transcription and testing skills effortlessly. Focus more on learning and interpreting results with automated analyses.",
   },
   {
-    title: "Test creators",
+    title: "Test Creators",
     description:
-      "Create new tests, digitize or update existing ones. Take advantage of a fully digital environment. Explore new approaches and materials, in any language.",
+      "Innovate freely: Create, digitize, or update tests quickly and effectively in any language.",
   },
   {
-    title: "Test publishers",
+    title: "Publishers",
     description:
-      "Harness the potential of all-digital test publishing. Update test materials or analyses within seconds. Expand speech testing into additional linguistic markets.",
+      "Seamlessly transition to digital publishing. Instantly update materials and analyses to reach global linguistic markets.",
   },
 ];

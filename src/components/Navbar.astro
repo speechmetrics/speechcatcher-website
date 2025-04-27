@@ -1,11 +1,12 @@
 ---
 // Navbar.astro
+import { MobileNav } from "./ui/MobileNav";
 ---
 
 <header
-  class="sticky top-0 z-50 w-full flex justify-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="sticky top-0 z-50 w-full flex justify-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-clip"
 >
-  <div class="container flex h-16 items-center">
+  <div class="container flex h-16 items-center mx-4">
     <!-- Logo on the left -->
     <div class="flex-shrink-0 mr-4">
       <a href="/" class="flex items-center gap-2">
@@ -14,8 +15,8 @@
       </a>
     </div>
 
-    <!-- Navigation links centered -->
-    <nav class="flex-1 flex justify-center items-center">
+    <!-- Navigation links centered - hidden on mobile -->
+    <nav class="hidden lg:flex flex-1 justify-center items-center">
       <div class="flex items-center gap-6">
         <a
           href="#features"
@@ -40,14 +41,19 @@
       </div>
     </nav>
 
-    <!-- Get Started button on the right -->
-    <div class="flex-shrink-0 ml-4">
+    <!-- Get Started button - hidden on small mobile screens -->
+    <div class="hidden sm:flex flex-shrink-0 ml-auto lg:ml-4">
       <a
         href="#"
         class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
       >
         Get Started
       </a>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="ml-auto lg:hidden">
+      <MobileNav client:load />
     </div>
   </div>
 </header>

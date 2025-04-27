@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-const { content } = Astro.props;
+const { title = "SpeechCatcher - Digital Speech Testing Platform" } = Astro.props;
 ---
 
 <html lang="en">
@@ -8,9 +8,49 @@ const { content } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
+		<meta name="description" content="SpeechCatcher - A complete solution for speech testing right at your fingertips, making your work easier, faster, and better." />
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-background font-sans antialiased">
+		<div class="relative flex min-h-screen flex-col">
+			<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+				<div class="container flex h-16 items-center justify-between">
+					<div class="flex items-center gap-6 text-lg font-semibold">
+						<a href="/" class="flex items-center gap-2">
+							<span class="text-primary">SpeechCatcher</span>
+						</a>
+					</div>
+					<nav class="flex items-center gap-6">
+						<a href="#features" class="text-sm font-medium hover:text-primary transition-colors">Features</a>
+						<a href="#users" class="text-sm font-medium hover:text-primary transition-colors">Who It's For</a>
+						<a href="#how-it-works" class="text-sm font-medium hover:text-primary transition-colors">How It Works</a>
+						<a href="#contact" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+						<a href="#" class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+							Get Started
+						</a>
+					</nav>
+				</div>
+			</header>
+			
+			<main class="flex-1">
+				<slot />
+			</main>
+			
+			<footer class="border-t py-6 md:py-0">
+				<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+					<p class="text-sm text-muted-foreground">
+						&copy; {new Date().getFullYear()} SpeechCatcher. All rights reserved.
+					</p>
+					<div class="flex items-center gap-4">
+						<a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+							Privacy Policy
+						</a>
+						<a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+							Terms of Service
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>

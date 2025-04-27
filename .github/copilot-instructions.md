@@ -1,5 +1,7 @@
 # Instructions
 
+This is a redesign of [the SpeechCatcher website](https://www.speechcatcher.ca/)
+
 - This is an AstroJS project
 - This project uses react with shadcnui
 - This project uses tailwind for styling

@@ -1,11 +1,10 @@
 ---
-// HowItWorks.astro
-import { processSteps } from "../../data/process";
-import ProcessStep from "./ProcessStep.astro";
+import { testimonials } from "../../data/testimonials";
+import TestimonialCard from "./TestimonialCard.astro";
 ---
 
-<!-- How It Works Section -->
-<section id="how-it-works" class="py-20 bg-background flex justify-center">
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-background flex justify-center">
   <div class="container max-w-6xl px-4 md:px-6">
     <div
       class="flex flex-col items-center justify-center space-y-4 text-center"
@@ -14,26 +13,28 @@ import ProcessStep from "./ProcessStep.astro";
         <div
           class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
         >
-          How It Works
+          Testimonials
         </div>
         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-          Your pathway to efficient speech testing
+          What Our Users Say
         </h2>
         <p
           class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
         >
-          Streamline your workflow from data collection to analysis and
-          reporting.
+          Hear from the professionals who use SpeechCatcher every day to
+          transform their speech assessment and analysis workflow.
         </p>
       </div>
     </div>
     <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 py-12 md:grid-cols-3">
       {
-        processSteps.map((step) => (
-          <ProcessStep
-            number={step.number}
-            title={step.title}
-            features={step.features}
+        testimonials.map((testimonial) => (
+          <TestimonialCard
+            name={testimonial.name}
+            role={testimonial.role}
+            organization={testimonial.organization}
+            quote={testimonial.quote}
+            image={testimonial.image}
           />
         ))
       }

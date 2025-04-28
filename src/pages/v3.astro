@@ -1,13 +1,11 @@
 ---
 import Layout from "../layouts/main.astro";
-import Features from "../components/features/Features.astro";
-import UserSegments from "../components/users/UserSegments.astro";
-import HowItWorks from "../components/process/HowItWorks.astro";
-import CallToAction from "../components/CallToAction.astro";
 import { v3features } from "../data/v3-features";
 import { v3userSegments } from "../data/v3-users";
 import { v3processSteps } from "../data/v3-process";
 import ProcessStep from "../components/process/ProcessStep.astro";
+import UserCard from "../components/users/UserCard.astro";
+import FeatureCard from "../components/features/FeatureCard.astro";
 ---
 
 <Layout>
@@ -92,19 +90,11 @@ import ProcessStep from "../components/process/ProcessStep.astro";
       >
         {
           v3features.map((feature) => (
-            <div class="relative overflow-hidden rounded-lg border bg-background p-2">
-              <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                <div class="space-y-2">
-                  <div class="inline-flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
-                    <span set:html={feature.icon} />
-                  </div>
-                  <h3 class="font-bold">{feature.title}</h3>
-                  <p class="text-sm text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
           ))
         }
       </div>
@@ -139,10 +129,7 @@ import ProcessStep from "../components/process/ProcessStep.astro";
       >
         {
           v3userSegments.map((segment) => (
-            <div class="rounded-lg border bg-card p-6 shadow-sm">
-              <h3 class="text-xl font-bold mb-2">{segment.title}</h3>
-              <p class="text-muted-foreground">{segment.description}</p>
-            </div>
+            <UserCard title={segment.title} description={segment.description} />
           ))
         }
       </div>

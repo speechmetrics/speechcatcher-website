@@ -4,6 +4,7 @@ interface Testimonial {
   role: string;
   organization: string;
   quote: string;
+  rating: number;
   image?: string;
 }
 
@@ -15,6 +16,7 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
+    rating: 5,
     image: "https://placehold.co/150x150?text=JD",
   },
   {
@@ -24,6 +26,7 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
+    rating: 5,
     image: "https://placehold.co/150x150?text=JD",
   },
   {
@@ -33,6 +36,7 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
+    rating: 5,
     image: "https://placehold.co/150x150?text=JD",
   },
 ];

@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
-    image: "https://placehold.co/150x150?text=SJ",
+    image: "https://placehold.co/150x150?text=JD",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
-    image: "https://placehold.co/150x150?text=SJ",
+    image: "https://placehold.co/150x150?text=JD",
   },
   {
     id: 3,
@@ -33,6 +33,6 @@ export const testimonials: Testimonial[] = [
     organization: "University Medical Center",
     quote:
       "SpeechCatcher has transformed how I conduct assessments. The automated analysis saves me hours of work each week, allowing me to focus more on therapy and less on paperwork.",
-    image: "https://placehold.co/150x150?text=SJ",
+    image: "https://placehold.co/150x150?text=JD",
   },
 ];

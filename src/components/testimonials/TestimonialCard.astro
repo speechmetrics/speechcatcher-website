@@ -6,11 +6,43 @@ interface Props {
   role: string;
   organization: string;
   quote: string;
+  highlightedQuote?: string[];
   rating: number;
   image?: string;
 }
 
-const { name, role, organization, quote, rating = 5, image } = Astro.props;
+const {
+  name,
+  role,
+  organization,
+  quote,
+  highlightedQuote = [],
+  rating = 5,
+  image,
+} = Astro.props;
+
+// Function to render a highlighted quote
+function renderHighlightedQuote(text: string, highlights: string[]) {
+  if (!highlights.length) return text;
+
+  let result = text;
+  highlights.forEach((highlight) => {
+    // Escape special regex characters to avoid issues
+    const escapedHighlight = highlight.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`(${escapedHighlight})`, "gi");
+    // Using Blue-600 (#2680C2) for text and Blue-50 (#DCEEFB) for background
+    result = result.replace(
+      regex,
+      '<span class="font-medium text-[#2680C2] bg-[#DCEEFB] px-1 rounded-sm">$1</span>'
+    );
+  });
+  return result;
+}
+
+const processedQuote =
+  highlightedQuote.length > 0
+    ? renderHighlightedQuote(quote, highlightedQuote)
+    : quote;
 ---
 
 <div
@@ -30,7 +62,13 @@ const { name, role, organization, quote, rating = 5, image } = Astro.props;
       ></path>
     </svg>
     <p class="pl-6 italic text-muted-foreground">
-      {quote}
+      {
+        highlightedQuote.length > 0 ? (
+          <Fragment set:html={processedQuote} />
+        ) : (
+          quote
+        )
+      }
     </p>
   </div>
 

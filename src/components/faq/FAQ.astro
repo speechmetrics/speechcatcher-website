@@ -1,0 +1,39 @@
+---
+// FAQ.astro
+import { faqs } from "../../data/faqs";
+import FAQItem from "./FAQItem.astro";
+import Badge from "../ui/Badge.astro";
+---
+
+<!-- FAQ Section -->
+<section id="faq" class="py-20 bg-[#F0F4F8] flex justify-center">
+  <div class="container px-4 md:px-6 max-w-6xl">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center mb-10"
+    >
+      <div class="space-y-2">
+        <Badge text="Frequently Asked Questions" />
+        <h2
+          class="text-3xl font-bold tracking-tighter md:text-4xl/tight text-[#102A43]"
+        >
+          Common Questions About SpeechCatcher
+        </h2>
+        <p
+          class="max-w-[900px] text-[#627D98] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Find answers to the most commonly asked questions about our platform
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto max-w-3xl bg-white rounded-lg shadow-sm border border-blue-100"
+    >
+      {
+        faqs.map((faq) => (
+          <FAQItem question={faq.question} answer={faq.answer} />
+        ))
+      }
+    </div>
+  </div>
+</section>

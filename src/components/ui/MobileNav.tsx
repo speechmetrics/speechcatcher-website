@@ -6,6 +6,8 @@ const navLinks = [
   { href: "#features", text: "Features" },
   { href: "#users", text: "Who It's For" },
   { href: "#how-it-works", text: "How It Works" },
+  { href: "#testimonials", text: "Testimonials" },
+  { href: "#faq", text: "FAQ" },
   { href: "#contact", text: "Contact" },
 ];
 
@@ -56,7 +58,9 @@ export function MobileNav() {
       <div
         className={cn(
           "bg-background fixed top-0 right-0 z-50 h-full w-3/4 max-w-sm shadow-lg transition-transform duration-300 ease-in-out",
-          isOpen ? "translate-x-0" : "translate-x-full opacity-0 pointer-events-none",
+          isOpen
+            ? "translate-x-0"
+            : "pointer-events-none translate-x-full opacity-0",
         )}
       >
         <div className="flex h-16 items-center border-b px-6">

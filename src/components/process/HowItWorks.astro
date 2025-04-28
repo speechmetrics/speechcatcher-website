@@ -2,6 +2,7 @@
 // HowItWorks.astro
 import { processSteps } from "../../data/process";
 import ProcessStep from "./ProcessStep.astro";
+import Badge from "../ui/Badge.astro";
 ---
 
 <!-- How It Works Section -->
@@ -11,11 +12,7 @@ import ProcessStep from "./ProcessStep.astro";
       class="flex flex-col items-center justify-center space-y-4 text-center"
     >
       <div class="space-y-2">
-        <div
-          class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
-        >
-          How It Works
-        </div>
+        <Badge text="How It Works" />
         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
           Your pathway to efficient speech testing
         </h2>

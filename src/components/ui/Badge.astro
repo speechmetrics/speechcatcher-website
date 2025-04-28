@@ -1,0 +1,23 @@
+---
+interface Props {
+  text: string;
+  variant?: "default" | "secondary" | "outline";
+  className?: string;
+}
+
+const { text, variant = "default", className = "" } = Astro.props;
+
+// Define variant styles
+const variantStyles = {
+  default: "bg-primary/10 text-primary",
+  secondary: "bg-secondary/10 text-secondary",
+  outline: "border border-primary text-primary bg-transparent",
+};
+
+const baseStyles = "inline-block rounded-lg px-3 py-1 text-sm";
+const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;
+---
+
+<div class={styles}>
+  {text}
+</div>

@@ -1,6 +1,7 @@
 ---
 import { testimonials } from "../../data/testimonials";
 import TestimonialCard from "./TestimonialCard.astro";
+import Badge from "../ui/Badge.astro";
 ---
 
 <!-- Testimonials Section -->
@@ -10,11 +11,7 @@ import TestimonialCard from "./TestimonialCard.astro";
       class="flex flex-col items-center justify-center space-y-4 text-center"
     >
       <div class="space-y-2">
-        <div
-          class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
-        >
-          Testimonials
-        </div>
+        <Badge text="Testimonials" />
         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
           What Our Users Say
         </h2>

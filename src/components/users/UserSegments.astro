@@ -2,6 +2,7 @@
 // UserSegments.astro
 import { userSegments } from "../../data/users";
 import UserCard from "./UserCard.astro";
+import Badge from "../ui/Badge.astro";
 ---
 
 <!-- User Segments Section -->
@@ -11,11 +12,7 @@ import UserCard from "./UserCard.astro";
       class="flex flex-col items-center justify-center space-y-4 text-center"
     >
       <div class="space-y-2">
-        <div
-          class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
-        >
-          Who It's For
-        </div>
+        <Badge text="Who It's For" />
         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
           Designed with you in mind
         </h2>

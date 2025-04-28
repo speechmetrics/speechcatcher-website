@@ -2,6 +2,7 @@
 // Features.astro
 import { features } from "../../data/features";
 import FeatureCard from "./FeatureCard.astro";
+import Badge from "../ui/Badge.astro";
 ---
 
 <!-- Features Section -->
@@ -11,11 +12,7 @@ import FeatureCard from "./FeatureCard.astro";
       class="flex flex-col items-center justify-center space-y-4 text-center"
     >
       <div class="space-y-2">
-        <div
-          class="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary"
-        >
-          Features
-        </div>
+        <Badge text="Features" />
         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
           Advanced speech testing, simplified
         </h2>

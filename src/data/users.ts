@@ -10,25 +10,27 @@ export const userSegments: UserSegment[] = [
     description:
       "Deliver higher-quality assessments in less time. Automate scoring and securely manage speech testing digitally.",
   },
-  {
-    title: "Researchers",
-    description:
-      "Leverage advanced tools for speech data collection and automated analysis. Easily export data for external analysis.",
-  },
+
   {
     title: "Educators",
     description:
       "Efficiently teach complete speech assessment workflows from recording to reporting—all within one integrated platform.",
   },
   {
-    title: "Students",
-    description:
-      "Develop essential transcription and testing skills effortlessly. Focus more on learning and interpreting results with automated analyses.",
-  },
-  {
     title: "Test Creators",
     description:
       "Innovate freely: Create, digitize, or update tests quickly and effectively in any language.",
+  },
+  {
+    title: "Researchers",
+    description:
+      "Leverage advanced tools for speech data collection and automated analysis. Easily export data for external analysis.",
+  },
+
+  {
+    title: "Students",
+    description:
+      "Develop essential transcription and testing skills effortlessly. Focus more on learning and interpreting results with automated analyses.",
   },
   {
     title: "Publishers",

@@ -1,0 +1,71 @@
+---
+import BenefitCard from "./BenefitCard.astro";
+import Badge from "../ui/Badge.astro";
+
+interface Benefit {
+  title: string;
+  description: string;
+  iconClass: string;
+  color: "blue" | "yellow" | "cyan";
+}
+
+const benefits: Benefit[] = [
+  {
+    title: "Reclaim Your Time",
+    description:
+      "Cut manual scoring and administrative tasks by up to 40% with automated analysis. Focus more on what matters—therapy, research, teaching, or learning—while SpeechCatcher handles the repetitive work.",
+    iconClass: "fa-clock",
+    color: "blue",
+  },
+  {
+    title: "Boost Accuracy & Precision",
+    description:
+      "Enhance assessment quality through automated recording, time alignment, and visual analysis tools. Digital phonetic transcription eliminates human error and ensures consistent results every time.",
+    iconClass: "fa-check-circle",
+    color: "yellow",
+  },
+  {
+    title: "Drive Decisions with Data",
+    description:
+      "Generate instant analyses and customizable reports to support evidence-based practice. Easily export findings to inform treatment plans and track progress with meaningful metrics.",
+    iconClass: "fa-chart-bar",
+    color: "cyan",
+  },
+];
+---
+
+<!-- Benefits Section -->
+<section id="benefits" class="py-20 bg-background flex justify-center">
+  <div class="container px-4 md:px-6 mx-auto max-w-6xl">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <Badge text="Benefits" />
+        <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          Experience the SpeechCatcher Advantage
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Speech assessment reimagined for busy professionals.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        benefits.map((benefit) => (
+          <BenefitCard
+            title={benefit.title}
+            description={benefit.description}
+            iconClass={benefit.iconClass}
+            color={benefit.color}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

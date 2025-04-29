@@ -4,7 +4,7 @@ import Badge from "../ui/Badge.astro";
 
 interface Benefit {
   title: string;
-  description: string;
+  description: string[];
   iconClass: string;
   color: "blue" | "yellow" | "cyan";
 }
@@ -12,22 +12,28 @@ interface Benefit {
 const benefits: Benefit[] = [
   {
     title: "Reclaim Your Time",
-    description:
-      "Cut manual scoring and administrative tasks by up to 40% with automated analysis. Focus more on what matters—therapy, research, teaching, or learning—while SpeechCatcher handles the repetitive work.",
+    description: [
+      "Cut manual scoring and administrative tasks by up to 40% with automated analysis.",
+      "Focus more on therapy, research, teaching, or learning while SpeechCatcher handles repetitive work.",
+    ],
     iconClass: "fa-clock",
     color: "blue",
   },
   {
     title: "Boost Accuracy & Precision",
-    description:
-      "Enhance assessment quality through automated recording, time alignment, and visual analysis tools. Digital phonetic transcription eliminates human error and ensures consistent results every time.",
+    description: [
+      "Enhance assessment quality through automated recording and time alignment.",
+      "Eliminate human error with digital phonetic transcription for consistent results.",
+    ],
     iconClass: "fa-check-circle",
     color: "yellow",
   },
   {
     title: "Drive Decisions with Data",
-    description:
-      "Generate instant analyses and customizable reports to support evidence-based practice. Easily export findings to inform treatment plans and track progress with meaningful metrics.",
+    description: [
+      "Generate instant analyses and customizable reports for evidence-based practice.",
+      "Easily export findings to inform treatment plans and track progress.",
+    ],
     iconClass: "fa-chart-bar",
     color: "cyan",
   },

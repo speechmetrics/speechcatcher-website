@@ -6,6 +6,8 @@ SpeechCatcher is a comprehensive digital platform designed to revolutionize spee
 
 The main product is the SpeechCatcher iPad app
 
+SpeechCatcher adheres to the following encryption standard: RSA (with OAEP-sha256 padding) + AES-256-CGM
+
 ## Instructions
 
 This is a redesign of [the SpeechCatcher website](https://www.speechcatcher.ca/)

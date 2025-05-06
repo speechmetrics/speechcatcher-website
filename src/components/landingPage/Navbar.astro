@@ -1,7 +1,6 @@
 ---
 // Navbar.astro
 import Logo from "./Logo.astro";
-import { MobileNav } from "./ui/MobileNav";
 ---
 
 <header
@@ -27,11 +26,6 @@ import { MobileNav } from "./ui/MobileNav";
       >
         Get Started
       </a>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="ml-auto lg:hidden">
-      <MobileNav client:load />
     </div>
   </div>
 </header>

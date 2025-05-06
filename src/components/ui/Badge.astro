@@ -1,7 +1,15 @@
 ---
 interface Props {
   text: string;
-  variant?: "default" | "secondary" | "outline";
+  variant?:
+    | "default"
+    | "secondary"
+    | "outline"
+    | "inProgress"
+    | "underReview"
+    | "planned"
+    | "completed"
+    | "considering";
   className?: string;
 }
 
@@ -12,6 +20,12 @@ const variantStyles = {
   default: "bg-primary/10 text-primary",
   secondary: "bg-secondary/10 text-secondary",
   outline: "border border-primary text-primary bg-transparent",
+  // Feedback status variants with specific colors from our palette
+  inProgress: "bg-[#E0FCFF] text-[#0E7C86]", // Cyan
+  underReview: "bg-[#FFFBEA] text-[#CB6E17]", // Yellow Vivid
+  planned: "bg-[#FFEEEE] text-[#A61B1B]", // Red
+  completed: "bg-[#DCEEFB] text-[#0F609B]", // Blue
+  considering: "bg-[#D9E2EC] text-[#486581]", // Blue Grey
 };
 
 const baseStyles = "inline-block rounded-lg px-3 py-1 text-sm";

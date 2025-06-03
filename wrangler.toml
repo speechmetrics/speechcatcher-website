@@ -1,0 +1,6 @@
+name = "speechcatcher-website"
+compatibility_date = "2025-06-03"
+main = "dist/_worker.js"
+
+[site]
+bucket = "./public"

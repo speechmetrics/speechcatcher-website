@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "wrangler types && astro dev",
     "build": "wrangler types && astro build",
+    "postbuild": "echo -e '_worker.js\n_routes.json' > dist/.assetsignore",
     "preview": "wrangler types && wrangler dev",
     "astro": "astro"
   },

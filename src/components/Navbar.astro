@@ -1,10 +1,20 @@
 ---
 // Navbar.astro
 import Logo from "./Logo.astro";
+
+interface Props {
+  solid?: boolean;
+}
+
+const { solid = false } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 w-full flex justify-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-clip"
+  class={`sticky top-0 z-50 w-full flex justify-center border-b border-border/40 ${
+    solid
+      ? "bg-white"
+      : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  } overflow-x-clip`}
 >
   <div class="container flex h-16 items-center max-w-6xl px-4">
     <!-- Logo on the left -->

@@ -5,6 +5,8 @@ import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import FeedbackItem from "../components/feedbackPage/FeedbackItem.astro";
 import { ScrollArea } from "../components/ui/scroll-area";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 const title = "Feedback - SpeechCatcher";
 ---
@@ -24,7 +26,7 @@ const title = "Feedback - SpeechCatcher";
     <title>{title}</title>
   </head>
   <body
-    class="min-h-screen bg-[#F0F4F8] font-sans antialiased flex items-center justify-center"
+    class="min-h-screen bg-[#F0F4F8] font-sans antialiased flex items-center flex-col justify-between"
   >
     <div class="container px-4 md:px-6 mx-auto max-w-6xl py-8">
       <Card className="overflow-hidden p-0 border-2 border-[#D9E2EC] shadow-lg">

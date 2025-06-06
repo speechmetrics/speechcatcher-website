@@ -1,0 +1,28 @@
+---
+const { title, logo } = Astro.props;
+
+const href = "/docs";
+---
+
+<a {href} class="site-title sl-flex">
+  <span> SpeechCatcher Documentation </span>
+</a>
+
+<style>
+  .site-title {
+    align-items: center;
+    gap: var(--sl-nav-gap);
+    font-size: var(--sl-text-h4);
+    font-weight: 600;
+    color: var(--sl-color-site-title);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  img {
+    height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: 0 50%;
+  }
+</style>

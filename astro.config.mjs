@@ -7,6 +7,8 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
 
+import starlight from "@astrojs/starlight";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -18,7 +20,24 @@ export default defineConfig({
     },
   },
   output: "server",
-  integrations: [react()],
+  integrations: [
+    react(),
+    starlight({
+      title: "SpeechCatcher Documentation",
+      description: "Documentation for SpeechCatcher.",
+      customCss: ["./src/styles/custom.css"],
+      components: {
+        SiteTitle: "./src/components/overrides/SiteTitle.astro",
+      },
+      sidebar: [
+        "docs",
+        {
+          label: "Guides",
+          autogenerate: { directory: "docs/guides" },
+        },
+      ],
+    }),
+  ],
   adapter: cloudflare({
     platformProxy: {
       enabled: true,

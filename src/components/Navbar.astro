@@ -26,7 +26,14 @@ const { solid = false } = Astro.props;
     </div>
 
     <!-- Navigation links centered - hidden on mobile -->
-    <nav class="hidden lg:flex flex-1 justify-center items-center"></nav>
+    <nav class="hidden lg:flex flex-1 justify-center items-center">
+      <a
+        href="/docs"
+        class="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      >
+        Documentation
+      </a>
+    </nav>
 
     <!-- Get Started button - hidden on small mobile screens -->
     <div class="hidden sm:flex flex-shrink-0 ml-auto lg:ml-4">

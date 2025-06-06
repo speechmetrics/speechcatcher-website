@@ -18,7 +18,7 @@ export default defineConfig({
         : undefined,
     },
   },
-  output: "server",
+  output: "static",
   integrations: [
     react(),
     starlight({

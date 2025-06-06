@@ -36,5 +36,9 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tw-animate-css": "^1.2.8"
+  },
+  "browser": {
+    "fs": false,
+    "child_process": false
   }
 }

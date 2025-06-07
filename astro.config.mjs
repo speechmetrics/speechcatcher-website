@@ -30,6 +30,7 @@ export default defineConfig({
       },
       sidebar: [
         "docs",
+        "docs/getting-started",
         {
           label: "Guides",
           autogenerate: { directory: "docs/guides" },

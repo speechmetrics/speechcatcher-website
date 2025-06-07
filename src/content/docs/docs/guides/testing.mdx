@@ -1,0 +1,64 @@
+---
+title: How to Run a Speech Test
+description: How to run a speech test with SpeechCatcher
+sidebar:
+  order: 1
+---
+
+import test_details_screen_empty_png from "src/assets/images/guides/testing/test-details-screen-empty.png";
+import test_details_screen_filled_png from "src/assets/images/guides/testing/test-details-screen-filled.png";
+import tests_screen_png from "src/assets/images/guides/testing/tests-screen.png";
+import { Image } from "astro:assets";
+import { Steps } from "@astrojs/starlight/components";
+
+Begin by selecting and running a speech test on SpeechCatcher. Follow the steps below to navigate, configure, and start your test.
+
+:::note
+SpeechCatcher is still in development, and the app interface may change.
+:::
+
+## Setting up the test
+
+<Steps>
+
+1. **Navigate to the Tests Screen**  
+   From anywhere in the app, tap either:
+
+   - **Tests** on the home screen
+   - **Tests** icon in the bottom tab bar
+
+2. **Browse or Search Your Tests**
+
+   - The main area shows all available tests in card form.
+   - To filter, tap the **🔍** icon at top-right to reveal the search bar, then type your query.
+
+   <Image src={tests_screen_png} alt="" width={300} />
+
+3. **View Test Details**
+
+   - Tap the test card you want to run to open **Test Details**.
+   - Review: title, version, description, image previews, target lists, and counts (images & targets).
+
+   <Image src={test_details_screen_empty_png} alt="" width={300} />
+
+4. **Configure Your Testing Session**  
+    Fill in the session parameters below the test info:
+
+   | Setting       | Required? | Notes                                            |
+   | ------------- | :-------: | ------------------------------------------------ |
+   | **Client**    |    Yes    | Select from your pre-registered list of clients. |
+   | **Clinician** |    Yes    | Enter the name of the person running this test.  |
+   | **Language**  |    No     | Pick if the test supports >1 language.           |
+   | **Dialect**   |    No     | Pick if the test supports >1 dialect.            |
+   | **Randomize** |    No     | Toggle on to show images in a random order.      |
+
+5. **Start the Test**  
+   Once **Client** and **Clinician** are set, tap **Start test** at the bottom-left to begin.
+
+   <Image src={test_details_screen_filled_png} alt="" width={300} />
+
+</Steps>
+
+## Next Steps: Running the Test
+
+In the next section, learn how to advance through stimuli, record client responses, pause, and end the session. Feel free to provide additional context or questions, and we’ll continue refining this guide!

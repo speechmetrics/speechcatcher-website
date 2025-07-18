@@ -10,3 +10,53 @@ Once you've recorded speech test data in SpeechCatcher, the next step is to tran
 :::note
 SpeechCatcher is still in development, and the app interface may change.
 :::
+
+Once you've finished testing, the next step is to transcribe the recorded data. First, go to the Clients screen and select the tested client.
+
+**Image of the Clients screen**
+
+You will then see a table with all the test sessions for that client.
+
+**Image of the Client screen**
+
+Tap on one of these sessions to select it, and then tap the "View Data" button in the bottom left corner.
+
+This will take you to the Records and Reports screen for that session.
+
+**Image of the records and reports screen**
+
+Tap on any of the records in the table to begin transcribing.
+
+**Image of the transcription screen**
+
+Now that you're at the transcription screen, you'll see several options. At the top, there are arrow buttons, left and right, with a number in between indicating the current record you're transcribing. Below that is the image from which this record was recorded. To the right, there are four text fields: orthography (the spelling of the word from the record in its language), model (the desired phonetic representation), actual (what will be changed into the production the client made), and notes (for any miscellaneous notes). On the far right, there are a series of buttons. The top one with the book icon reveals alternate word forms for the word associated with the record. These contain their own orthography and IPA representation, which will go into the model field. Usually, there is a word form for every combination of language and dialect, as well as multiple words with the same meaning in a given language, like "cat" and "kitty" in English, which require different IPA representations. The next button, which may or may not be enabled, shows relevant data tiers for the record. These are specified by the test creators on a target-by-target basis. A common use is to provide translations for the words in other languages, such as English. Not all tests have these, and the button will be disabled if absent. The bottom three-dot button currently does nothing.
+
+**Image of the record data view**
+
+Next, you will see a waveform representation of the recorded audio. A segment of this audio is highlighted, coinciding with the timestamp when the user tapped on the target. You can drag the handles on either side of the selected segment, as well as the area between them, to resize and move the segment within the recording. You can also play the audio within the segment by tapping on it. There is a button on the right side of the segment to toggle whether or not playback will loop. Below the main waveform is a secondary, zoomed-out waveform that serves as a preview and scroll bar for the top waveform. Below these waveforms are a few buttons for interaction. There are buttons to zoom in and out on the far left, as well as a button to center the top waveform on the segment. To the right, there is a button to select the playback speed, as well as a dedicated button to play the audio from the segment.
+
+**Image of the waveform view**
+
+Finally, as we continue down, we arrive at the phone alignment view. The phone alignment view shows the model and actual phonetic representations of the record to convey additional information to the clinician. **Be sure to ask Yvan for a better explanation of what this does visually**.
+
+**Image of the phone alignment view**
+
+When you tap on one of the phones, you will see a dedicated IPA keyboard appear.
+
+**Image of the IPA keyboard**
+
+This keyboard consists of several separate layouts, currently four, with more potentially added in the future. These layouts include consonants, vowels, diacritics, and suggestions, with suggestions being custom based on phonetic processes we have defined. By pressing any of these keys or selecting any suggestions, you can edit the phonetic representations as you see fit.
+
+There are also dots on either side of each phone. You can tap on them to select them and reveal the IPA keyboard as you would with the phones. If you press a key on the keyboard from there, it inserts the character instead of just replacing an existing one.
+
+Below both the model and actual transcripts, you can see several ovals that coincide with the syllables of the word. You can tap on these syllable bars to get suggestions that correspond with that particular syllable, as well as the ability to add or change tones for tonal languages such as Mandarin.
+
+Off to the right side of the phone alignment view, we will see a big checkmark button that, when pressed, will validate the record. Validating a record means it has been reviewed by the clinician and will be included in any reports generated that include this session.
+
+**Image of the validate button on a validated record**
+
+There is an option in the settings menu to automatically advance the record when it's validated. This will go to the next unvalidated record automatically. Once the record currently on the transcription screen has been validated, this setting is enabled by default.
+
+**Image of the "automatically advance records" setting**
+
+Once all the records have been transcribed, it's time to generate a report.

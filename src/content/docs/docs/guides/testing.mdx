@@ -1,6 +1,6 @@
 ---
 title: How to run a speech test
-description: How to run a speech test with SpeechCatcher
+description: Step-by-step guide to running a speech test with SpeechCatcher
 sidebar:
   order: 1
 ---
@@ -11,10 +11,10 @@ import tests_screen_png from "src/assets/images/guides/testing/tests-screen.png"
 import { Image } from "astro:assets";
 import { Steps } from "@astrojs/starlight/components";
 
-Begin by selecting and running a speech test on SpeechCatcher. Follow the steps below to navigate, configure, and start your test.
+This guide walks you through selecting, configuring, and running a speech test in SpeechCatcher.
 
 :::note
-SpeechCatcher is still in development, and the app interface may change.
+SpeechCatcher is in active development, so the interface may change over time.
 :::
 
 ## Setting up the test
@@ -22,38 +22,38 @@ SpeechCatcher is still in development, and the app interface may change.
 <Steps>
 
 1. **Navigate to the Tests Screen**  
-   From anywhere in the app, tap either:
+   From anywhere in the app, you can open the **Tests** screen by:
 
-   - **Tests** on the home screen
-   - **Tests** icon in the bottom tab bar
+   - Tapping **Tests** on the home screen, or
+   - Selecting the **Tests** icon in the bottom tab bar.
 
-2. **Browse or Search Your Tests**
+2. **Browse or Search for a Test**
 
-   - The main area shows all available tests in card form.
-   - To filter, tap the **🔍** icon at top-right to reveal the search bar, then type your query.
+   - The main section lists all available tests in card format.
+   - To search, tap the **🔍** icon in the top-right corner to open the search bar, then enter your keywords.
 
    <Image src={tests_screen_png} alt="" width={300} />
 
-3. **View Test Details**
+3. **Open Test Details**
 
-   - Tap the test card you want to run to open **Test Details**.
-   - Review: title, version, description, image previews, target lists, and counts (images & targets).
+   - Tap the card for the test you want to run.
+   - The **Test Details** screen displays the test title, version, description, preview images, target lists, and target counts.
 
    <Image src={test_details_screen_empty_png} alt="" width={300} />
 
-4. **Configure Your Testing Session**  
-    Fill in the session parameters below the test info:
+4. **Set Up the Testing Session**  
+   Complete the session fields below the test information:
 
-   | Setting       | Required? | Notes                                            |
-   | ------------- | :-------: | ------------------------------------------------ |
-   | **Client**    |    Yes    | Select from your pre-registered list of clients. |
-   | **Clinician** |    Yes    | Enter the name of the person running this test.  |
-   | **Language**  |    No     | Pick if the test supports >1 language.           |
-   | **Dialect**   |    No     | Pick if the test supports >1 dialect.            |
-   | **Randomize** |    No     | Toggle on to show images in a random order.      |
+   | Setting       | Required? | Description                                          |
+   | ------------- | :-------: | ---------------------------------------------------- |
+   | **Client**    |    Yes    | Select from your list of registered clients.         |
+   | **Clinician** |    Yes    | Enter the name of the person administering the test. |
+   | **Language**  |    No     | Select if multiple languages are available.          |
+   | **Dialect**   |    No     | Select if multiple dialects are available.           |
+   | **Randomize** |    No     | Show test images in random order.                    |
 
 5. **Start the Test**  
-   Once **Client** and **Clinician** are set, tap **Start test** at the bottom-left to begin.
+   When **Client** and **Clinician** are set, tap **Start test** (bottom-left) to begin.
 
    <Image src={test_details_screen_filled_png} alt="" width={300} />
 
@@ -61,30 +61,66 @@ SpeechCatcher is still in development, and the app interface may change.
 
 ## Running the Test
 
-When you press "Start Test" the first thing you see is a message indicating you're about to begin the test. It shows the name of the test in the specified language and dialect, if applicable. There is a big button in the middle that says "Begin." In the top left corner, you'll see a back button in case you decide not to start.
+When you tap **Start Test**, a confirmation screen appears showing:
+
+- The test name (and language/dialect if applicable)
+- A **Begin** button in the center
+- A back button (top-left) to return without starting
 
 **Image of the begin message**
 
-After pressing "Begin," you will be presented with the first image of the test.
+Press **Begin** to display the first test image.
 
-**Image of the a test screen**
+**Image of a test screen**
 
-These images contain what are called targets; an image can have zero, one, or multiple targets. Images with no targets will not record anything when you tap on them. If there is one target, that target comprises the entire image, and tapping on it will record the word associated with it. If an image contains multiple targets, you tap on the corresponding area of the image to record that target. With any given target, there are two main ways of interacting with it. You can either do a short press or a long press. A short press indicates an incorrect production of the target, while a long press indicates an incorrect production.
+Each image contains one or more **targets**:
 
-Across the bottom of the screen you will see a row of three buttons. The one in the middle shows a prompt for the given target (iterating through the prompts if there's already a prompt showing when you press it). On either side of that, there are arrow buttons for navigating between images.
+- **No targets:** Tapping does nothing.
+- **One target:** The whole image is the target. Tapping records the word.
+- **Multiple targets:** Tap the specific area to record that target.
+
+Interaction types:
+
+- **Short press:** Marks the target as produced incorrectly.
+- **Long press:** Marks the target as produced correctly.
+
+At the bottom of the screen:
+
+- **Center button:** Shows the target prompt (press again to cycle through prompts).
+- **Left/right arrows:** Navigate between images.
 
 **Image of the buttons at the bottom**
 
-In the top left corner you will see a button to pause the test. If you pause the test, a message will say that you have now stopped your recording, followed by the name of the test, showing the dialect if applicable. It will show you how many targets you have recorded as a fraction, and you'll have options to either resume testing, cancel testing, or finish testing. Resuming will bring you back to testing after a resume message, which is similar to the beginning message. Cancel will conclude the test without saving the recording or any associated data. Finish will conclude the recording and save the recorded data. If you finish or cancel, you'll be presented with options on where you want to navigate to next in the app. These options include the home screen, the client screen for the client being tested, the records and reports screen, which shows all the recorded records, and the transcription screen for transcribing the first recorded record.
+In the top-left corner, a **Pause** button lets you temporarily stop the test.  
+When paused, you'll see:
+
+- Test name (and dialect if applicable)
+- Number of targets recorded so far (e.g., `15/20`)
+- Options to **Resume**, **Cancel**, or **Finish**
+
+- **Resume:** Returns to testing after a short confirmation screen.
+- **Cancel:** Ends the session without saving.
+- **Finish:** Saves the recording and test data.
+
+After canceling or finishing, you can choose to navigate to:
+
+- Home screen
+- Client screen for the tested client
+- Records & reports screen
+- Transcription screen for the first recorded record
 
 **Image of the pause message**
 
-When you reach the end of a test, you'll see a message indicating that you've reached the end. It will show the number of targets you've recorded as a fraction of all the targets in the test. If you have recorded all of them, the test will automatically finish. If not, there will be an option to go back and record the remaining targets. Pressing this will return you to the test and let you record the targets that have not been recorded.
+At the end of a test, you'll see a completion screen showing:
+
+- Number of targets recorded (e.g., `20/20`)
+- If some targets were missed, an option to return and record them
 
 **Image of the finish message**
 
-There is an option in the app settings to automatically advance test screens. If enabled, whenever you have recorded all the targets on a screen, it will automatically go to the next image. This option is enabled by default.
+If **Automatically advance test screens** is enabled in settings, the app moves to the next image once all targets on the current screen are recorded.  
+This is **enabled by default**.
 
 **Image of the "automatically advance test screens" setting**
 
-Once you're done testing, it's time to transcribe your recorded data.
+Once testing is complete, you can move on to **transcribing your recorded data**.

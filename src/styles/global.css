@@ -4,35 +4,63 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ---- Intent-based tokens wired to your palette ---- */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --font-sans: "Poppins", system-ui, sans-serif;
+
+  /* surfaces + text */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
+  /* brand */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
+  /* accents & UI neutrals */
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  /* conversion CTA (yellow) */
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+
+  /* semantic */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-muted: var(--success-muted);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-muted: var(--warning-muted);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-muted: var(--info-muted);
   --color-destructive: var(--destructive);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* charts (brand-first, then supporting) */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -43,42 +71,83 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ===== LIGHT THEME ===== */
 :root {
   --radius: 0.625rem;
   --font-sans: "Poppins", system-ui, sans-serif;
+
+  /* surfaces */
   --background: #f0f4f8; /* blue-grey-50 */
   --foreground: #102a43; /* blue-grey-900 */
   --card: #ffffff;
   --card-foreground: #102a43; /* blue-grey-900 */
   --popover: #ffffff;
   --popover-foreground: #102a43; /* blue-grey-900 */
-  --primary: #4098d7; /* blue-400 */
+
+  /* brand (slightly deeper blue for stronger contrast on outlines & small UI) */
+  --primary: #2680c2; /* blue-500 (hero/buttons) */
   --primary-foreground: #ffffff;
+
+  /* neutrals */
   --secondary: #d9e2ec; /* blue-grey-100 */
   --secondary-foreground: #334e68; /* blue-grey-700 */
   --muted: #bcccdc; /* blue-grey-200 */
   --muted-foreground: #486581; /* blue-grey-600 */
+
+  /* accent */
   --accent: #e0fcff; /* cyan-50 */
   --accent-foreground: #0a6c74; /* cyan-800 */
+
+  /* conversion CTA (yellow on dark text for AA contrast) */
+  --cta: #f0b429; /* yellow-vivid-500 */
+  --cta-foreground: #102a43; /* blue-grey-900 */
+
+  /* semantic */
+  --success: #2cb1bc; /* cyan-500 */
+  --success-foreground: #044e54; /* cyan-900 */
+  --success-muted: #e0fcff; /* cyan-50 */
+  --warning: #de911d; /* yellow-vivid-600 */
+  --warning-foreground: #102a43; /* blue-grey-900 */
+  --warning-muted: #fff3c4; /* yellow-vivid-100 */
+  --info: #4098d7; /* blue-400 */
+  --info-foreground: #003e6b; /* blue-900 */
+  --info-muted: #dceefb; /* blue-50 */
+
   --destructive: #ba2525; /* red-500 */
+
+  /* inputs, borders, focus rings */
   --border: #bcccdc; /* blue-grey-200 */
   --input: #d9e2ec; /* blue-grey-100 */
-  --ring: #4098d7; /* blue-400 */
-  --chart-1: #4098d7; /* blue-400 */
+  --ring: #186faf; /* blue-600 for stronger focus contrast */
+
+  /* charts */
+  --chart-1: #2680c2; /* blue-500 */
   --chart-2: #2cb1bc; /* cyan-500 */
   --chart-3: #f0b429; /* yellow-vivid-500 */
   --chart-4: #627d98; /* blue-grey-500 */
   --chart-5: #d64545; /* red-400 */
+
+  /* sidebar */
   --sidebar: #f0f4f8; /* blue-grey-50 */
   --sidebar-foreground: #102a43; /* blue-grey-900 */
-  --sidebar-primary: #4098d7; /* blue-400 */
+  --sidebar-primary: #2680c2; /* blue-500 */
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #d9e2ec; /* blue-grey-100 */
   --sidebar-accent-foreground: #334e68; /* blue-grey-700 */
   --sidebar-border: #bcccdc; /* blue-grey-200 */
-  --sidebar-ring: #4098d7; /* blue-400 */
+  --sidebar-ring: #186faf; /* blue-600 */
+
+  /* interaction sizing per WCAG 2.2 */
+  --target-min: 24px; /* min pointer target */
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: color-mix(in oklab, var(--ring) 70%, transparent);
+  --focus-ring-shadow:
+    0 0 0 var(--focus-ring-offset) #fff,
+    0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--ring);
 }
 
+/* ===== DARK THEME ===== */
 .dark {
   --background: #102a43; /* blue-grey-900 */
   --foreground: #f0f4f8; /* blue-grey-50 */
@@ -86,42 +155,155 @@
   --card-foreground: #f0f4f8; /* blue-grey-50 */
   --popover: #243b53; /* blue-grey-800 */
   --popover-foreground: #f0f4f8; /* blue-grey-50 */
+
+  /* brand: lighter blue for dark backgrounds */
   --primary: #62b0e8; /* blue-300 */
   --primary-foreground: #0a558c; /* blue-800 */
+
   --secondary: #334e68; /* blue-grey-700 */
   --secondary-foreground: #f0f4f8; /* blue-grey-50 */
   --muted: #486581; /* blue-grey-600 */
   --muted-foreground: #9fb3c8; /* blue-grey-300 */
+
   --accent: #0e7c86; /* cyan-700 */
   --accent-foreground: #e0fcff; /* cyan-50 */
+
+  /* CTA: brighter yellow on dark; keep dark text for legibility */
+  --cta: #f7c948; /* yellow-vivid-400 */
+  --cta-foreground: #102a43; /* blue-grey-900 */
+
+  /* semantic */
+  --success: #38bec9; /* cyan-400 */
+  --success-foreground: #044e54; /* cyan-900 */
+  --success-muted: #0a6c74; /* cyan-800 (surface tint) */
+  --warning: #fadb5f; /* yellow-vivid-300 */
+  --warning-foreground: #102a43;
+  --warning-muted: #334e68; /* subtle surface under warn text */
+  --info: #62b0e8; /* blue-300 */
+  --info-foreground: #0f609b; /* blue-700 */
+  --info-muted: #243b53; /* panel tone in dark */
+
   --destructive: #d64545; /* red-400 */
-  --border: rgba(240, 244, 248, 0.1); /* blue-grey-50 with opacity */
-  --input: rgba(240, 244, 248, 0.15); /* blue-grey-50 with opacity */
-  --ring: #627d98; /* blue-grey-500 */
+
+  --border: rgba(240, 244, 248, 0.12);
+  --input: rgba(240, 244, 248, 0.16);
+  --ring: #9fb3c8; /* blue-grey-300 for visible focus on dark */
+
   --chart-1: #62b0e8; /* blue-300 */
   --chart-2: #38bec9; /* cyan-400 */
   --chart-3: #f7c948; /* yellow-vivid-400 */
   --chart-4: #9fb3c8; /* blue-grey-300 */
   --chart-5: #e66a6a; /* red-300 */
+
   --sidebar: #243b53; /* blue-grey-800 */
   --sidebar-foreground: #f0f4f8; /* blue-grey-50 */
   --sidebar-primary: #62b0e8; /* blue-300 */
-  --sidebar-primary-foreground: #f0f4f8; /* blue-grey-50 */
+  --sidebar-primary-foreground: #102a43; /* ensure readable on light chips */
   --sidebar-accent: #334e68; /* blue-grey-700 */
   --sidebar-accent-foreground: #f0f4f8; /* blue-grey-50 */
-  --sidebar-border: rgba(240, 244, 248, 0.1); /* blue-grey-50 with opacity */
-  --sidebar-ring: #627d98; /* blue-grey-500 */
+  --sidebar-border: rgba(240, 244, 248, 0.12);
+  --sidebar-ring: #9fb3c8;
+
+  --focus-ring-color: color-mix(in oklab, var(--ring) 80%, transparent);
 }
 
+/* ===== BASE LAYER & ACCESSIBILITY ===== */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+    outline-color: var(--ring);
+    outline-offset: var(--focus-ring-offset);
   }
+
+  /* global focus-visible – strong, consistent indicator (WCAG 2.1/2.2) */
+  :where(
+      a,
+      button,
+      [role="button"],
+      input,
+      textarea,
+      select,
+      [tabindex]:not([tabindex="-1"])
+    ):focus-visible {
+    outline-style: solid;
+    outline-width: var(--focus-ring-width);
+    box-shadow: var(--focus-ring-shadow);
+    transition:
+      outline-color 120ms ease,
+      box-shadow 120ms ease;
+  }
+
+  /* ensure minimum pointer target size (WCAG 2.2 2.5.8) */
+  :where(
+    a,
+    button,
+    [role="button"],
+    input[type="checkbox"],
+    input[type="radio"]
+  ) {
+    min-width: var(--target-min);
+    min-height: var(--target-min);
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     font-family: var(--font-sans);
   }
+}
+
+/* ===== HELPER CLASSES (optional, handy for components) ===== */
+
+/* Primary button (blue) */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: var(--radius-md);
+}
+.btn-primary:hover {
+  filter: brightness(0.94);
+}
+.btn-primary:active {
+  filter: brightness(0.9);
+}
+
+/* CTA button (yellow) – high-conversion accent */
+.btn-cta {
+  background: var(--color-cta);
+  color: var(--color-cta-foreground);
+  border-radius: var(--radius-md);
+}
+.btn-cta:hover {
+  filter: saturate(1.05) brightness(1.02);
+}
+.btn-cta:active {
+  filter: brightness(0.96);
+}
+
+/* Status surfaces */
+.alert-success {
+  background: var(--success-muted);
+  color: var(--success-foreground);
+  border: 1px solid color-mix(in oklab, var(--success) 35%, transparent);
+}
+.alert-warning {
+  background: var(--warning-muted);
+  color: var(--warning-foreground);
+  border: 1px solid color-mix(in oklab, var(--warning) 35%, transparent);
+}
+.alert-info {
+  background: var(--info-muted);
+  color: var(--info-foreground);
+  border: 1px solid color-mix(in oklab, var(--info) 35%, transparent);
+}
+.alert-error {
+  background: color-mix(in oklab, #ffeeee 75%, transparent);
+  color: #611111;
+  border: 1px solid color-mix(in oklab, var(--destructive) 35%, transparent);
 }

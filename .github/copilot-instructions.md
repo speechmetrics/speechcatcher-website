@@ -1,98 +1,217 @@
-# SpeechCatcher Website
+# Copilot Instructions — SpeechCatcher Website (Astro + Cloudflare)
 
-## What is SpeechCatcher?
+Use these instructions when generating code, editing files, or writing docs for this repo.
 
-SpeechCatcher is a comprehensive digital platform designed to revolutionize speech testing across clinical and academic environments. It offers a complete solution for creating, administering, and analyzing speech assessments in any language through features like interactive speech recording, assisted phonetic transcription, and fully automated analysis. The platform eliminates manual scoring, significantly reducing the time professionals spend on administrative tasks while improving assessment quality. Designed for speech clinicians, researchers, teachers, and students alike, SpeechCatcher supports all languages and multilingual settings with full International Phonetic Alphabet compatibility, making it versatile for various speech testing needs while maintaining industry-standard data privacy and security protocols for medical applications.
+## Commands (use **bun**)
 
-The main product is the SpeechCatcher iPad app
+Prefer running repository scripts via **bun**:
 
-SpeechCatcher adheres to the following encryption standard: RSA (with OAEP-sha256 padding) + AES-256-CGM
+- `bun install` — install dependencies
+- `bun run dev` — start local dev server (Astro) at http://localhost:4321
+- `bun run build` — build the site (Astro + Wrangler types)
+- `bun run preview` — local Cloudflare Worker preview (Wrangler)
+- `bun run astro` — run Astro CLI
 
-## Instructions
+> Scripts come from `package.json` and already chain `wrangler types` where needed. Avoid raw `npm`/`yarn` commands.
 
-This is a redesign of [the SpeechCatcher website](https://www.speechcatcher.ca/)
+## Project Architecture
 
-- This is an AstroJS project
-- This project uses react with shadcnui
-- This project uses tailwind for styling
-- AstroJS, React, shadcn/ui and Tailwind are all already installed and configured
-- Use the Context7 MCP server to get documentation when needed
-- Use <https://placehold.co> for placeholder images
-  - EX: `https://placehold.co/600x400?text=Hello+World`
+- **Framework:** Astro 5.x (islands architecture)
+- **Integrations:** `@astrojs/react`, `@astrojs/svelte`, `@astrojs/mdx`, `@astrojs/starlight` (for docs if used)
+- **Deploy target:** Cloudflare Workers via `@astrojs/cloudflare` + `wrangler`
+- **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`) + `tw-animate-css`
+- **UI/Components:**
+  - **shadcn/ui** components (https://ui.shadcn.com/) **via Astro’s React support**
+  - `lucide-react` for icons
+  - `class-variance-authority` (CVA) for variants
+  - `tailwind-merge` for class conflict resolution
+- **Lang/Types:** TypeScript (keep explicit types; avoid `any`)
+- **Content:** Markdown/MDX via `@astrojs/mdx`; Starlight for documentation sections (frontmatter-driven)
 
-## Palette
+### Source Layout (conventions)
 
-### Blue
+- Pages/layouts: `src/pages`, `src/layouts` (Astro first)
+- Components (React/Svelte/shadcn-ui): `src/components`
+- Docs (Starlight, if enabled): `src/content/docs`
+- Static assets: `public/`
 
-| Shade |    Hex    |
-| :---: | :-------: |
-|  50   | `#DCEEFB` |
-|  100  | `#B6E0FE` |
-|  200  | `#84C5F4` |
-|  300  | `#62B0E8` |
-|  400  | `#4098D7` |
-|  500  | `#2680C2` |
-|  600  | `#186FAF` |
-|  700  | `#0F609B` |
-|  800  | `#0A558C` |
-|  900  | `#003E6B` |
+---
 
-### Yellow Vivid
+## Coding Guidelines
 
-| Shade |    Hex    |
-| :---: | :-------: |
-|  50   | `#FFFBEA` |
-|  100  | `#FFF3C4` |
-|  200  | `#FCE588` |
-|  300  | `#FADB5F` |
-|  400  | `#F7C948` |
-|  500  | `#F0B429` |
-|  600  | `#DE911D` |
-|  700  | `#CB6E17` |
-|  800  | `#B44D12` |
-|  900  | `#8D2B0B` |
+### Astro-first
 
-### Blue Grey
+- Prefer `.astro` for page composition and non-interactive UI.
+- Use **small** React or Svelte islands only when interactivity is necessary.
 
-| Shade |    Hex    |
-| :---: | :-------: |
-|  50   | `#F0F4F8` |
-|  100  | `#D9E2EC` |
-|  200  | `#BCCCDC` |
-|  300  | `#9FB3C8` |
-|  400  | `#829AB1` |
-|  500  | `#627D98` |
-|  600  | `#486581` |
-|  700  | `#334E68` |
-|  800  | `#243B53` |
-|  900  | `#102A43` |
+### React islands & shadcn/ui
 
-### Cyan
+- Import shadcn/ui components inside React components and hydrate as islands from `.astro`:
+  - Example usage in an Astro page:
+    ```astro
+    ---
+    import { HeroCta } from "../components/HeroCta"; // React component using shadcn/ui
+    ---
+    <section>
+      <HeroCta client:visible />
+    </section>
+    ```
+- Keep islands minimal; avoid hydrating entire pages.
 
-| Shade |    Hex    |
-| :---: | :-------: |
-|  50   | `#E0FCFF` |
-|  100  | `#BEF8FD` |
-|  200  | `#87EAF2` |
-|  300  | `#54D1DB` |
-|  400  | `#38BEC9` |
-|  500  | `#2CB1BC` |
-|  600  | `#14919B` |
-|  700  | `#0E7C86` |
-|  800  | `#0A6C74` |
-|  900  | `#044E54` |
+### Client directives
 
-### Red
+- Use `client:visible` or `client:idle` for most islands.
+- Reserve `client:load` for cases that must mount immediately.
 
-| Shade |    Hex    |
-| :---: | :-------: |
-|  50   | `#FFEEEE` |
-|  100  | `#FACDCD` |
-|  200  | `#F29B9B` |
-|  300  | `#E66A6A` |
-|  400  | `#D64545` |
-|  500  | `#BA2525` |
-|  600  | `#A61B1B` |
-|  700  | `#911111` |
-|  800  | `#780A0A` |
-|  900  | `#610404` |
+### Tailwind & variants
+
+- Favor utility classes; group logically for readability.
+- Use **CVA** for variant-heavy components; use **tailwind-merge** when composing classes to avoid conflicts.
+
+### Accessibility
+
+- All interactive elements (including shadcn/ui) must have accessible names/labels, visible focus styles, and correct roles.
+- Maintain color-contrast standards.
+
+### Images & media
+
+- Provide meaningful `alt`.
+- Prefer lazy loading and width/height to avoid CLS.
+
+### Motion
+
+- Prefer CSS transitions for simple effects.
+- Use `motion` (Framer Motion for web) sparingly in islands; keep animations 60fps and low-jank.
+
+### Edge compatibility
+
+- Cloudflare Worker target: **don’t** introduce Node-only APIs on runtime paths (e.g., `fs`, `child_process`).
+- If you need build-time Node, confine it to tooling or static generation.
+
+---
+
+## Repo Scripts Map (for Copilot)
+
+Map suggestions to these exact scripts:
+
+- **Dev:** `bun run dev` → `wrangler types && astro dev`
+- **Build:** `bun run build` → `wrangler types && astro build`
+- **Postbuild:** writes `dist/.assetsignore` for Worker assets
+- **Preview:** `bun run preview` → `wrangler types && wrangler dev`
+- **Astro CLI:** `bun run astro`
+
+---
+
+## Starlight Docs (if present)
+
+- Add docs in `src/content/docs/<section>/<slug>.mdx`.
+- Include frontmatter (`title`, `description`).
+- Keep headings structured (h2/h3) and examples minimal, runnable, and relevant.
+
+---
+
+## Patterns Copilot Should Prefer
+
+### 1) Astro page + small React island (shadcn/ui inside)
+
+- Page remains `.astro`; only the interactive widget is a React island.
+- Example React component:
+
+  ```tsx
+  // src/components/HeroCta.tsx
+  import { Button } from "@/components/ui/button"; // shadcn/ui
+  import { ArrowRight } from "lucide-react";
+
+  export function HeroCta() {
+    return (
+      <div className="flex items-center gap-3">
+        <Button size="lg" className="rounded-2xl">
+          Get Started <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+        <Button variant="outline" size="lg" className="rounded-2xl">
+          Learn More
+        </Button>
+      </div>
+    );
+  }
+  ```
+
+### 2) CVA for variants
+
+- Use CVA to encode visual variants and sizes; export `className` helpers for reuse.
+
+### 3) Tailwind organization
+
+- Group classes by layout → spacing → typography → color → effects.
+- Use `tailwind-merge` when composing class strings across props.
+
+---
+
+## Visual / UX Checklist (run after UI changes)
+
+1. Verify desktop (≥1440px) and a mobile breakpoint (\~390px) for spacing/overflow.
+2. Check light/dark themes if supported.
+3. Keyboard navigation and focus order are sensible.
+4. Console is free of warnings/errors.
+5. No noticeable CLS on first render (reserve space for media/fonts).
+
+Provide desktop and mobile screenshots in PRs for any visual change.
+
+---
+
+## Build & Deploy
+
+- Local build must succeed with `bun run build`.
+- Use `bun run preview` for Worker preview (Wrangler).
+- Keep bundles lean; avoid shipping large client code to static pages.
+
+---
+
+## Linting & Formatting
+
+- Use Prettier (with Tailwind plugin).
+- Remove unused imports/code.
+- Keep TS definitions explicit and narrow.
+
+---
+
+## Git Hygiene
+
+- **Conventional Commits** (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, etc.).
+- Conventional branch names (e.g., `feat/landing-hero`, `fix/cloudflare-env`).
+- **Do not** add AI co-author trailers or attributions in commit messages.
+
+---
+
+## Guardrails (Do NOT)
+
+- Don’t hydrate entire pages by default.
+- Don’t add Node-only APIs to Worker-executed code.
+- Don’t inline large, unoptimized assets (>\~200KB) without justification.
+- Don’t bypass Tailwind/CVA conventions for component styling.
+
+---
+
+## Migration Notes (from prior CLAUDE.md workflows)
+
+- This is **Astro**, not Next.js—translate any Next-like suggestions into Astro pages/layouts with minimal islands.
+- MDX is handled by `@astrojs/mdx` (no custom MDX pipeline).
+- Replace any `npm` suggestions with **bun** (`bun install`, `bun run <script>`).
+
+---
+
+## When Unsure
+
+- Ask concise clarification in PR or issue.
+- Offer two approaches (pure Astro vs island) and note trade-offs (bundle size, CLS, DX).
+
+## Additional Context References
+
+When implementing changes, consult the following files in the `/spec` folder for detailed guidance:
+
+- `ALL_ABOUT_SPEECHCATCHER.md` — high-level product overview, goals, and positioning
+- `ANIMATION_GUIDELINES.md` — rules and patterns for motion/interaction design
+- `BRAND_VOICE_GUIDE.md` — tone, style, and copywriting guidelines
+- `DESIGN_PRINCIPLES.md` — core design system rules and philosophy
+
+Always cross-check visual/UI/UX changes against these specs before finalizing PRs.
